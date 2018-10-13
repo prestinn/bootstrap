@@ -53,5 +53,5 @@ def create_bootstrap_report():
             insert_node(from_tree, to_tree, 'host')
             to_tree.write('sample.xml')
         except Exception as e:
-            print("[-] XML node fucked: " str(e))
+            print("[-] XML node fucked: " + str(e))
             pass
