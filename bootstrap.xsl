@@ -60,28 +60,7 @@ Andreas Hontzia (@honze_net)
           </div>
         </nav>
         <div class="container">
-          <div class="jumbotron">
-            <h1>Scan Report<br/><small>Nmap <xsl:value-of select="/nmaprun/@version"/></small></h1>
-            <pre style="white-space:pre-wrap; word-wrap:break-word;"><xsl:value-of select="/nmaprun/@args"/></pre>
-            <p class="lead">
-              <xsl:value-of select="/nmaprun/@startstr"/> – <xsl:value-of select="/nmaprun/runstats/finished/@timestr"/><br/>
-              <xsl:value-of select="/nmaprun/runstats/hosts/@total"/> hosts scanned.
-              <xsl:value-of select="/nmaprun/runstats/hosts/@up"/> hosts up.
-              <xsl:value-of select="/nmaprun/runstats/hosts/@down"/> hosts down.
-            </p>
-            <div class="progress">
-              <div class="progress-bar progress-bar-success" style="width: 0%">
-                <xsl:attribute name="style">width:<xsl:value-of select="/nmaprun/runstats/hosts/@up div /nmaprun/runstats/hosts/@total * 100"/>%;</xsl:attribute>
-                <xsl:value-of select="/nmaprun/runstats/hosts/@up"/>
-                <span class="sr-only"></span>
-              </div>
-              <div class="progress-bar progress-bar-danger" style="width: 0%">
-                <xsl:attribute name="style">width:<xsl:value-of select="/nmaprun/runstats/hosts/@down div /nmaprun/runstats/hosts/@total * 100"/>%;</xsl:attribute>
-                <xsl:value-of select="/nmaprun/runstats/hosts/@down"/>
-                <span class="sr-only"></span>
-              </div>
-            </div>
-          </div>
+          <div class="jumbotron">          
           <h2 id="scannedhosts" class="target">Scanned Hosts<xsl:if test="/nmaprun/runstats/hosts/@down > 1024"><small> (offline hosts are hidden)</small></xsl:if></h2>
           <div class="table-responsive">
             <table id="table-overview" class="table table-striped dataTable" role="grid">
