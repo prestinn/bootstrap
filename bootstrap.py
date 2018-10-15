@@ -52,7 +52,7 @@ def create_bootstrap_report():
             from_tree = ET.ElementTree(file=i)
             to_tree = ET.ElementTree(file='modules/bootstrap/sample.xml')
             insert_node(from_tree, to_tree, 'host')
-            to_tree.write('sample.xml')
+            to_tree.write('modules/bootstrap/sample.xml')
         except Exception as e:
             print("[-] XML node fucked, probally no results: " + str(e))
             pass
