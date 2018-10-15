@@ -59,8 +59,7 @@ Andreas Hontzia (@honze_net)
             </div>
           </div>
         </nav>
-        <div class="container">
-          <div class="jumbotron">          
+        <div class="container">         
           <h2 id="scannedhosts" class="target">Scanned Hosts<xsl:if test="/nmaprun/runstats/hosts/@down > 1024"><small> (offline hosts are hidden)</small></xsl:if></h2>
           <div class="table-responsive">
             <table id="table-overview" class="table table-striped dataTable" role="grid">
