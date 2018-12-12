@@ -49,12 +49,15 @@ def get_node_parent_info(tree, node):
 def create_bootstrap_report():
     for i in xmlfiles:
         try:
+            print("[+] Adding XML file: {} to sample.xml".format(i))
             from_tree = ET.ElementTree(file=i)
             to_tree = ET.ElementTree(file='modules/bootstrap/sample.xml')
             insert_node(from_tree, to_tree, 'host')
             to_tree.write('modules/bootstrap/sample.xml')
         except Exception as e:
-            print("[-] XML node fucked, probally no results: " + str(e))
+            print("[-] XML node fucked, probally no results: " + str(i))
+            print("[*] Deleting the fucked up node!")
+            os.remove(i)
             pass
 
 if __name__ == "__main__":
